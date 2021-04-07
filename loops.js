@@ -1,23 +1,23 @@
+const { returnStatement } = require("@babel/types");
+module.exports = {  sumChetny, isPrime, getPodbor, getBinary, isFactorial, Sum, Mirror }
 // task 1 "Найти сумму четных чисел и их количество в диапазоне от 1 до 99"
-
-function Summ_chetny(n) {
+function sumChetny(number) {
     var sum = 0;
     var count = 0;
-    for (var i = 0; i < n; i += 2) {
+    for (var i = 2; i < number; i += 2) {
         sum += i;
         count++;
     }
-    console.log('Сумма четных чисел: ', sum);
-    console.log('Количество четных чисел в диапазоне от 1 до 99: ', count);
+    return [sum, count];
 }
-Summ_chetny(100);
+//sumChetny(100);
 
 // task 2 'Проверить простое ли число? 
 //(число называется простым, если оно делится только само на себя и на 1) '
 function isPrime(num) {
     var prostoe = true;
     if (num < 1 || num % 1 !== 0) { // проверка на отрицательные или дробные
-    console.log("Неккоректно");
+        return("Некорректно");
     }
     else {
         for (var i = 2; i < num; i++) {
@@ -25,10 +25,10 @@ function isPrime(num) {
                 prostoe = false;
             }
         }
-    console.log(prostoe);
+        return(prostoe);
     }
 }
-isPrime(-1.5)
+//isPrime(-1.5)
 
 
 // TASK 3 'Найти корень натурального числа с точностью до целого
@@ -49,7 +49,7 @@ function getPodbor(num) {
         }
     }
 }
-getPodbor(55);
+//getPodbor(55);
 
 function getBinary(num) { //не работает !
     var count = 1;
@@ -76,7 +76,7 @@ function isFactorial(n) {
     }
     console.log(count);
 }
-isFactorial(4);
+//isFactorial(4);
 
 // Task 5 Посчитать сумму цифр заданного числа
 function Sum(num) {
@@ -88,7 +88,7 @@ function Sum(num) {
     console.log(count);
     //console.log(getStringtoArr); //наш массив 
 }
-Sum('954') 
+//Sum('954') 
 
 // Task 6 'Вывести число, которое является зеркальным отображением 
 //последовательности цифр заданного числа, 
@@ -101,4 +101,4 @@ function Mirror(num) {
     }
     console.log(mirror)
 }
-Mirror(123);
+//Mirror(123);

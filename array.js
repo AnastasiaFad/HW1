@@ -1,3 +1,5 @@
+module.exports = {  Min, Revers, Revers_Ops, countNechetny, bubbleSort, selectSort, insertionSort }
+
 // Task 1 - 5
 function Min(array) {
     var min = array[0];
@@ -18,31 +20,36 @@ function Min(array) {
             sum += array[i];
         }
     }
-    console.log("Min: ", min, 'index min: ', index_min);
-    console.log("Max: ", max, 'index max: ', index_max);
-    console.log('Сумма нечетных индексов: ', sum)
+    return(`Min: ${min}, index min: ${index_min}, Max: ${max}, index max: ${index_max}, Сумма нечетных индексов: ${sum}`);
+    // console.log("Min: ", min, 'index min: ', index_min); 
+    // console.log("Max: ", max, 'index max: ', index_max);
+    // console.log('Сумма нечетных индексов: ', sum)
 }
-Min([2, 4, 0, 1, 8, 9, -4]);
+//Min([2, 4, 0, 1, 8, 9, -4]);
 
 // Task 6 - 7 'Сделать реверс массива (массив в обратном направлении)'
 function Revers(array) {
     var count = 0;
     var revArray = []; // сюда будем записывать новый массив
     for (var i = 0; i < array.length; i++) {
-        revArray[i] = array[array.length - i - 1]; // с одратной стороны нашего массыва записыапем в новый
+        revArray[i] = array[array.length - i - 1]; // с обратной стороны нашего массыва записыапем в новый
         
     }
-    console.log(revArray);
+    return (revArray);
+}
+//Revers([2, 4, 0, 1, 8, 9]);
 
-    if (array.length % 2 === 0) { //Посчитать количество нечетных элементов массива
+function countNechetny(array) {
+     if (array.length % 2 === 0) { //Посчитать количество нечетных элементов массива
         count = array.length / 2;
     }
     else {
         count = Math.floor(array.length / 2); // отбрасываем десятые 
     }
-    console.log('Кол-во нечетных индексов: ', count)
+    // console.log('Кол-во нечетных индексов: ', count)
+    return count;
 }
-Revers([2, 4, 0, 1, 8, 9]);
+//countNechetny([2, 4, 0, 1, 8, 9, 7]);
 
 // Task 8 Поменять местами первую и вторую половину массива, например, для массива 
 //1 2 3 4, результат 3 4 1 2
@@ -56,9 +63,9 @@ function Revers_Ops(array) {
     for (i = 0; i < rev1; i++) {
         newArr[i + rev2] = array[i]
     }
-    console.log(newArr);
+    return(newArr);
 }
-Revers_Ops([2, 4, 0, 1, 8, 9])
+//Revers_Ops([2, 4, 0, 1, 8, 9])
 
 // Task 9 Отсортировать массив 
 function bubbleSort(array) {
@@ -75,9 +82,9 @@ function bubbleSort(array) {
         }
         if (!elem) break;
     }
-    //console.log(array)
+    return(array)
 }
-bubbleSort([2, 4, 0, 1, 8, 9])
+// bubbleSort([2, 4, 0, 1, 8, 9])
 
 function selectSort(array) {
     var min = 0;
@@ -94,9 +101,9 @@ function selectSort(array) {
         }
         if (!t_f) break;
     }
-    console.log(array);
+    return(array);
 }
-selectSort([2, 4, 0, 1, 8, 9])
+//selectSort([2, 4, 0, 1, 8, 9])
 
 function insertionSort(inputArr) {
     let n = inputArr.length;
@@ -113,8 +120,8 @@ function insertionSort(inputArr) {
             //console.log(inputArr);
         }
     //return inputArr;
-    console.log(inputArr);
+    return(inputArr);
 }
-insertionSort([5, 2, 4, 6, 1, 3]);
+// insertionSort([5, 2, 4, 6, 1, 3]);
 //console.log(inputArr);
 

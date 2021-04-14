@@ -42,10 +42,10 @@ function getPodbor(num) {
     for (var i = 1; i < num; i++){ // ... 3*3 = 9, ... ,4*4 = 16;
         count = i * i; // 3 // 4
         if (count === num) {
-            console.log(i); break;
+            return(i); 
         }
         if (num < count) { //10<9 // 10<16
-            console.log(i - 1); break;
+            return(i - 1); 
         }
     }
 }
@@ -56,8 +56,8 @@ function getBinary(num) { //не работает !
     //binary_num = num / 2;   //28/2 = 14
     loop1: for (count = num / 2; count * count >= num; count /= 2){ // 28/2 = 14
         if (count * count === num) {
-            continue loop1;
-            console.log(count);
+            // continue loop1;
+            // console.log(count);
         }
         //console.log(count);
     }
@@ -74,7 +74,7 @@ function isFactorial(n) {
     for (var i = 1; i <= n; i++){
         count *= i;
     }
-    console.log(count);
+    return(count);
 }
 //isFactorial(4);
 
@@ -85,7 +85,7 @@ function Sum(num) {
     for (var i = 0; i < getStringtoArr.length; i++){
         count += +getStringtoArr[i]; // счетчик 
     }
-    console.log(count);
+    return(count);
     //console.log(getStringtoArr); //наш массив 
 }
 //Sum('954') 
@@ -99,6 +99,6 @@ function Mirror(num) {
         mirror *= 10; 
         mirror += num % 10; 
     }
-    console.log(mirror)
+    return(mirror)
 }
 //Mirror(123);
